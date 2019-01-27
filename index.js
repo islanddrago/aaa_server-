@@ -10,6 +10,7 @@ var cloudinary = require('cloudinary');
 app.listen(5000, () => console.log('started'));
 
 app.use(function (req, res, next) {
+    var urlArray = [];
     cloudinary.config({
         cloud_name: 'dsldbhfav',
         api_key: '489315487456671',
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 
 
 app.post('/tradeinfo', (req, res) => {
+    
     //console.log('tradeinfo');
     var body = req.body
     //console.log(body.image);
@@ -30,6 +32,7 @@ app.post('/tradeinfo', (req, res) => {
         function (error, result) {
             console.log(result.secure_url);
             
+
             //console.log(result)
             
         });
