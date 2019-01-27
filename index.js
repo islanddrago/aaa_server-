@@ -30,10 +30,12 @@ app.post('/tradeinfo', (req, res) => {
         function (error, result) {
             console.log(result.secure_url);
             
+            res.json({url: result.secure_url});
+            
             //console.log(result)
             
         });
-    res.send(body.image);
+    
 })
 
 
