@@ -32,11 +32,16 @@ app.post('/tradeinfo', (req, res) => {
         function (error, result) {
             console.log(result.secure_url);
             
+<<<<<<< HEAD
 
+=======
+            res.json({url: result.secure_url});
+            
+>>>>>>> c91e67a0c7d20b2ee4d4910d2efa71adeea7d340
             //console.log(result)
             
         });
-    res.send(body.image);
+    
 })
 
 
