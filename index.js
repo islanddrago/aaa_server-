@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
 var cloudinary = require('cloudinary');
+'use strict';
 
 
 
@@ -22,11 +23,14 @@ app.use(bodyParser.json());
 
 
 app.post('/tradeinfo', (req, res) => {
-    console.log('tradeinfo');
+    //console.log('tradeinfo');
     var body = req.body
-    console.log(body.image);
+    //console.log(body.image);
     cloudinary.v2.uploader.upload(body.image,
         function (error, result) {
+            console.log(result.secure_url);
+            
+            //console.log(result)
             
         });
     res.send(body.image);
